@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block start %}
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold mb-6">All Recipes</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Loop through all recipes here -->
+            {% for recipe in recipes %}
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <!-- Recipe Image -->
+                <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <!-- Recipe Name -->
+                    <h2 class="text-xl font-bold mb-2">{{ recipe.name }}</h2>
+                    <!-- Recipe Description -->
+                    <p class="text-gray-700">{{ recipe.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </body>
+{% endblock %}

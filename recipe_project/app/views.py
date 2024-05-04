@@ -16,5 +16,11 @@ def recipes(req):
                 description=description,
                 image=image
             )
-    return render(req,'index.html')
+    recipes = Recipe.objects.all()
+    context = {'recipes':recipes}
+    return render(req,'index.html',context)
     
+def collection(req):
+    recipes = Recipe.objects.all()
+    context = {'recipes':recipes}
+    return render(req,'collection.html',context)
