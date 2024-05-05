@@ -5,7 +5,12 @@
 <body class="bg-gray-100">
 
     <div class="container mx-auto py-8">
-        <h1 class="text-3xl font-bold mb-6">All Recipes</h1>
+        <div class="flex items-center justify-between">
+
+            <h1 class="text-3xl font-bold mb-6">All Recipes</h1>
+            <div class="mb-6 text-right bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"><a href="/">Back to Home</a></div>
+        </div>
+    
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Loop through all recipes here -->
             {% for recipe in recipes %}
